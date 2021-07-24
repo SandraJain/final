@@ -66,43 +66,33 @@ public class HighCard {
         public void createBankerDice(JLabel l) {
 		
         bankerLabel = new JLabel();
-		if(getBankerDice() == 1) {
-			bankerImg = new ImageIcon(HighCard.class.getResource("pic/dice1.png"));
-			bankerImg.setImage(bankerImg.getImage().getScaledInstance(175,175,Image.SCALE_DEFAULT));
-			bankerLabel .setIcon(bankerImg);
-			bankerLabel.setBounds(335,255,150,150);
-			l.add(bankerLabel);
-		} else if(getBankerDice() == 2) {
-			bankerImg = new ImageIcon(HighCard.class.getResource("pic/dice2.png"));
-			bankerImg.setImage(bankerImg.getImage().getScaledInstance(152,152,Image.SCALE_DEFAULT));
-			bankerLabel .setIcon(bankerImg);
-			bankerLabel.setBounds(335,255,150,150);
-			l.add(bankerLabel);
-		} else if(getBankerDice() == 3) {
-			bankerImg = new ImageIcon(HighCard.class.getResource("pic/dice3.png"));
-			bankerImg.setImage(bankerImg.getImage().getScaledInstance(160,160,Image.SCALE_DEFAULT));
-			bankerLabel .setIcon(bankerImg);
-			bankerLabel.setBounds(335,255,150,150);
-			l.add(bankerLabel);
-		} else if(getBankerDice() == 4) {
-			bankerImg = new ImageIcon(HighCard.class.getResource("pic/dice4.png"));
-			bankerImg.setImage(bankerImg.getImage().getScaledInstance(148,148,Image.SCALE_DEFAULT));
-			bankerLabel .setIcon(bankerImg);
-			bankerLabel.setBounds(335,255,150,150);
-			l.add(bankerLabel);
-		} else if(getBankerDice() == 5) {
-			bankerImg = new ImageIcon(HighCard.class.getResource("pic/dice5.png"));
-			bankerImg.setImage(bankerImg.getImage().getScaledInstance(150,150,Image.SCALE_DEFAULT));
-			bankerLabel .setIcon(bankerImg);
-			bankerLabel.setBounds(335,255,150,150);
-			l.add(bankerLabel);
-		} else {
-			bankerImg = new ImageIcon(HighCard.class.getResource("pic/dice6.png"));
-			bankerImg.setImage(bankerImg.getImage().getScaledInstance(150,150,Image.SCALE_DEFAULT));
-			bankerLabel .setIcon(bankerImg);
-			bankerLabel.setBounds(335,255,150,150);
-			l.add(bankerLabel);
+		
+		int bankerDiceInt = getBankerDice();
+		bankerImg = new ImageIcon(HighCard.class.getResource("pic/dice"+bankerDiceInt+".png"));
+		switch(bankerDiceInt){
+			case 1:
+				bankerImg.setImage(bankerImg.getImage().getScaledInstance(175,175,Image.SCALE_DEFAULT));
+				break;
+			case 2:
+				bankerImg.setImage(bankerImg.getImage().getScaledInstance(152,152,Image.SCALE_DEFAULT));
+				break;
+			case 3:
+				bankerImg.setImage(bankerImg.getImage().getScaledInstance(160,160,Image.SCALE_DEFAULT));
+				break;
+			case 4:
+				bankerImg.setImage(bankerImg.getImage().getScaledInstance(148,148,Image.SCALE_DEFAULT));
+				break;
+			case 5:
+				bankerImg.setImage(bankerImg.getImage().getScaledInstance(150,150,Image.SCALE_DEFAULT));
+				break;
+			case 6:
+				bankerImg.setImage(bankerImg.getImage().getScaledInstance(150,150,Image.SCALE_DEFAULT));
+				break;
 		}
+		bankerLabel.setIcon(bankerImg);
+		bankerLabel.setBounds(335,255,150,150);
+		l.add(bankerLabel);
+		
 	}
 	public void createPlayerDice(JLabel l) {
 		
